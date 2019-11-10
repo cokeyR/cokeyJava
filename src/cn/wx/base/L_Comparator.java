@@ -19,7 +19,6 @@ class PersonComParator implements Comparator<Person_2>{
 		// TODO Auto-generated method stub
 		return o1.getAge()-o2.getAge();
 	}
-	
 }
 public class L_Comparator {
 	public static void main(String[] args) {

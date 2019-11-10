@@ -35,12 +35,12 @@ public class FileLockTest {
 				FileChannel fileChannel=lockfile.getChannel();
 				FileLock lock=fileChannel.tryLock();
 				if(lock==null){
-					System.out.println("Î´»ñµÃËø");
+					System.out.println("Î´ï¿½ï¿½ï¿½ï¿½ï¿½");
 				}
 				else if(lock.isValid()) {
-					System.out.println(Thread.currentThread().getName()+":ÓÐÎÄ¼þÇÒ»ñµÃËø");
+					System.out.println(Thread.currentThread().getName()+":ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½");
 					Thread.sleep(5000);
-					System.out.println(Thread.currentThread().getName()+"ÊÍ·ÅËø");
+					System.out.println(Thread.currentThread().getName()+"ï¿½Í·ï¿½ï¿½ï¿½");
 					lock.release();
 				}
 				
@@ -52,7 +52,7 @@ public class FileLockTest {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}catch (OverlappingFileLockException e) {
-				System.out.println(Thread.currentThread().getName()+":³¢ÊÔ»ñÈ¡ËøÊ§°Ü");
+				System.out.println(Thread.currentThread().getName()+":ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½Ê§ï¿½ï¿½");
 			}finally {
 				try {
 					lockfile.close();
@@ -88,13 +88,13 @@ public class FileLockTest {
 						Thread.sleep(1000);
 					}
 					else {
-						System.out.println(Thread.currentThread().getName()+"£º»ñµÃËø");
+						System.out.println(Thread.currentThread().getName()+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 						Thread.sleep(1000);
 						File d=new File(filePath);
 						lockfile.close();
 						d.delete();
 						lock.release();
-						System.out.println(Thread.currentThread().getName()+"£ºÊÍ·ÅËø");
+						System.out.println(Thread.currentThread().getName()+"ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½");
 					}
 					lockfile.close();
 				} catch (FileNotFoundException e) {
@@ -113,7 +113,7 @@ public class FileLockTest {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					System.out.println(Thread.currentThread().getName()+"£ºÎ´»ñµÃËø£¬ÒòÎªÎÄ¼þÒÑ¾­±»¼ÓËø");
+					System.out.println(Thread.currentThread().getName()+"ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ä¼ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				}
 			}
 			

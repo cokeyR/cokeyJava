@@ -56,6 +56,5 @@ public class T26_Pipe {
 				e.printStackTrace();
 			}
 		}
-		
 	}
 }
